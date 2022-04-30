@@ -40,9 +40,13 @@ public class ChallengeControllerV1 {
 
     @PostMapping("/update")
     @ApiOperation(value = "Return the available delivery options")
-    public Mono<PessoaDTO> listShippingMethods(@RequestBody PessoaDTO pessoaDTO) {
-        return facadeV1.save(null);
+    public Mono<Void> update(@RequestBody PessoaDTO pessoaDTO) {
+        return facadeV1.update(pessoaDTO);
     }
 
-
+    @PatchMapping("")
+    @ApiOperation(value = "Return the available delivery options")
+    public Mono<Void> updateStatus(@RequestBody PessoaDTO pessoaDTO) {
+        return facadeV1.updateStatus(pessoaDTO);
+    }
 }

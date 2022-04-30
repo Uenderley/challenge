@@ -31,4 +31,12 @@ public class FacadeV1 {
         return pessoaService.save(mapper.mapper(pessoaDTO))
                 .map(mapper::mapper);
     }
+
+    public Mono<Void> update(PessoaDTO pessoaDTO) {
+        return pessoaService.update(mapper.mapper(pessoaDTO));
+    }
+
+    public Mono<Void> updateStatus(PessoaDTO pessoaDTO) {
+        return pessoaService.updateStatus(mapper.mapper(pessoaDTO));
+    }
 }

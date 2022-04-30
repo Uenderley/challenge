@@ -30,4 +30,8 @@ public class PessoaService {
                 .flatMap(pessoaRepository::save)
                 .thenEmpty(Mono.empty());
     }
+
+    public Mono<Void> updateStatus(Pessoa mapper) {
+        return null;
+    }
 }
