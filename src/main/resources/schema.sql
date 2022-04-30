@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS pessoa (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    sobrenome VARCHAR(255),
+    email VARCHAR(255) NOT NULL,
+    cpf VARCHAR(14) NOT NULL,
+    ativo BOOLEAN
+);

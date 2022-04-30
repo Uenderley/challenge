@@ -1,0 +1,16 @@
+server:
+  port: 9000
+  servlet:
+    context-path: /challenge
+
+spring:
+  application:
+    name: challenge-service
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/challenge
+    username: postgres
+    password: postgres
+
+logging:
+  level:
+    org.springframework.data.r2dbc: Debug
