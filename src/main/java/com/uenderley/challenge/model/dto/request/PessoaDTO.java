@@ -1,4 +1,4 @@
-package com.uenderley.challenge.model.dto;
+package com.uenderley.challenge.model.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

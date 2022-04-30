@@ -1,6 +1,7 @@
 package com.uenderley.challenge.facade;
 
-import com.uenderley.challenge.model.dto.PessoaDTO;
+import com.uenderley.challenge.model.dto.request.PessoaDTO;
+import com.uenderley.challenge.model.dto.response.PessoaResponseDTO;
 import com.uenderley.challenge.model.mapper.PessoaMapper;
 import com.uenderley.challenge.service.PessoaService;
 import org.mapstruct.factory.Mappers;
@@ -17,17 +18,17 @@ public class FacadeV1 {
 
     private PessoaMapper mapper = Mappers.getMapper(PessoaMapper.class);
 
-    public Flux<PessoaDTO> findAll() {
+    public Flux<PessoaResponseDTO> findAll() {
         return pessoaService.findAll()
                 .map(pessoaAux -> mapper.mapper(pessoaAux));
     }
 
-    public Mono<PessoaDTO> findById(Integer id) {
+    public Mono<PessoaResponseDTO> findById(Integer id) {
         return pessoaService.findById(id)
                 .map(mapper::mapper);
     }
 
-    public Mono<PessoaDTO> save(PessoaDTO pessoaDTO) {
+    public Mono<PessoaResponseDTO> save(PessoaDTO pessoaDTO) {
         return pessoaService.save(mapper.mapper(pessoaDTO))
                 .map(mapper::mapper);
     }
@@ -38,5 +39,9 @@ public class FacadeV1 {
 
     public Mono<Void> updateStatus(PessoaDTO pessoaDTO) {
         return pessoaService.updateStatus(mapper.mapper(pessoaDTO));
+    }
+
+    public Mono<Void> deleteById(Integer idPessoa) {
+        return pessoaService.deleteById(idPessoa);
     }
 }

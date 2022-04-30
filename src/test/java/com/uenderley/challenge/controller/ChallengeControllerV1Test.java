@@ -1,7 +1,7 @@
 package com.uenderley.challenge.controller;
 
 import com.uenderley.challenge.facade.FacadeV1;
-import com.uenderley.challenge.stub.PessoaDTOStub;
+import com.uenderley.challenge.stub.PessoaResponseDTOStub;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -38,8 +38,8 @@ public class ChallengeControllerV1Test {
     }
 
     @Test
-    void shouldReturn2xxStatus() {
-        final var pessoa = PessoaDTOStub.build();
+    void deveRetornar200QuandoChamarListarTodos() {
+        final var pessoa = PessoaResponseDTOStub.build();
         when(facadeV1.findAll())
                 .thenReturn(Flux.just(pessoa));
 

@@ -34,4 +34,8 @@ public class PessoaService {
     public Mono<Void> updateStatus(Pessoa mapper) {
         return null;
     }
+
+    public Mono<Void> deleteById(Integer idPessoa) {
+        return pessoaRepository.deleteById(idPessoa);
+    }
 }

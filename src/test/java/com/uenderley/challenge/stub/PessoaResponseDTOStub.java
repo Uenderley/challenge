@@ -1,6 +1,6 @@
 package com.uenderley.challenge.stub;
 
-import com.uenderley.challenge.model.dto.request.PessoaDTO;
+import com.uenderley.challenge.model.dto.response.PessoaResponseDTO;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class PessoaDTOStub {
-    public static PessoaDTO build() {
-        return PessoaDTO.builder()
+public class PessoaResponseDTOStub {
+    public static PessoaResponseDTO build() {
+        return PessoaResponseDTO.builder()
                 .nome("NomePessoa")
                 .sobrenome("Sobrenome")
                 .email("mail")
@@ -19,8 +19,8 @@ public class PessoaDTOStub {
                 .build();
     }
 
-    public static List<PessoaDTO> builder(int size){
-        List<PessoaDTO> pessoas = new ArrayList<>();
+    public static List<PessoaResponseDTO> builder(int size){
+        List<PessoaResponseDTO> pessoas = new ArrayList<>();
         for (int tamanho = 0 ; tamanho < size; tamanho++) {
             pessoas.add(build());
         }
